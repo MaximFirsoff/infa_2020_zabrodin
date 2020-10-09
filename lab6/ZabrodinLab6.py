@@ -2,6 +2,10 @@ import pygame
 from pygame.draw import *
 from random import randint
 pygame.init()
+pygame.mixer.init()
+file = 'morgen.mp3'
+pygame.mixer.music.load(file)
+pygame.mixer.music.play(-1)
 
 def main():
     button_width = 300
