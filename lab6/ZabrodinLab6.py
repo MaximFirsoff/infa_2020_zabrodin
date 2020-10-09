@@ -177,6 +177,7 @@ def main():
                     if (super_ball['x'] - mouse_x) ** 2 + (super_ball['y'] - mouse_y) ** 2 <= super_ball['r'] ** 2:
                         super_balls[i] = create_super_ball()
                         score += 5
+                        
         text = font.render('Score: ' + str(score), 1, (255, 255, 255))
         screen.blit(text, (0, 30))
         text = font.render('Time: ' + str(int(time_out/FPS * 10) / 10), 1, (255, 255, 255))
