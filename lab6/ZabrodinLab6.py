@@ -3,9 +3,7 @@ from pygame.draw import *
 from random import randint
 pygame.init()
 pygame.mixer.init()
-file = 'morgen.mp3'
-pygame.mixer.music.load(file)
-pygame.mixer.music.play(-1)
+
 
 def main():
     button_width = 300
@@ -16,7 +14,8 @@ def main():
     w = 1200
     h = 900
     FPS = 60
-    time_out_begin = 30 * FPS
+    TIME = 30 #Time in seconds
+    time_out_begin = TIME * FPS
     time_out = time_out_begin
     screen = pygame.display.set_mode((w, h))
     ticks = 0
@@ -33,6 +32,9 @@ def main():
     COLORS = [RED, BLUE, YELLOW, GREEN, MAGENTA, CYAN]
     
     def highscore(score):
+        file = 'VIKA.mp3'
+        pygame.mixer.music.load(file)
+        pygame.mixer.music.play(-1)
         font = pygame.font.Font(None, 50)
         clock = pygame.time.Clock()
         input_box = pygame.Rect((w - button_width) /2 + 15, h / 2 - 10, button_width - 15, 50)
@@ -150,8 +152,11 @@ def main():
         if not started_already:
             screen.fill(BLACK)
             clicked = False
+            file = 'morgen.mp3'
+            pygame.mixer.music.load(file)
+            pygame.mixer.music.play(-1)
             while not clicked:
-                rect(screen, (255,218,158), ((w - button_width) / 2, (h - button_height) / 2, button_width, button_height))
+                rect(screen, (255, 218, 158), ((w - button_width) / 2, (h - button_height) / 2, button_width, button_height))
                 text = font.render('START', 1, (99, 128, 255))
                 screen.blit(text, (w / 2 - 53, h / 2 - 13))
                 pygame.display.update()
@@ -163,6 +168,9 @@ def main():
                         if mouse_x <= (w + button_width) / 2 and mouse_x >= (w - button_width) / 2 and mouse_y <= (h + button_height) / 2 and mouse_y >= (h - button_height) / 2:
                             clicked = True
                             started_already = True
+                            file = 'central.mp3'
+                            pygame.mixer.music.load(file)
+                            pygame.mixer.music.play(-1)
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
