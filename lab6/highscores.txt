@@ -1,3 +1,4 @@
-Artyom: 28
-Fasda: 25
-I: 22
+Example1: 20
+Example2: 10
+Example3: 5
+
