@@ -1,10 +1,11 @@
+# Author: Artyom Zabrodin (B02-002)
+
 import pygame
 from pygame.draw import *
 from random import randint
 
 pygame.init()
 pygame.mixer.init()
-
 
 def main():
     button_width, button_height = 300, 100 # Start button width and height
